@@ -2,34 +2,126 @@
   font-family: sans-serif;
 }
 body {
-  max-width: 50%;
+  width: 350px;
   margin-left: auto;
   margin-right: auto;
+  background: #e6f1ff;
 }
-input,
+
+.App {
+  display: block;
+  position: relative;
+  margin-top: 20%;
+  border: 2px solid #7393b3;
+  background: black;
+}
+
+.App-header {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #7393b3;
+}
+
+#calc-section,
+#input-section {
+  font-family: digital-7;
+  text-align: right;
+}
+
+#calc-section {
+  min-height: 20px;
+  font-size: 2rem;
+  color: #6082b6;
+  line-height: 20px;
+}
+
+#input-section {
+  font-size: 29px;
+  color: whitesmoke;
+  line-height: 35px;
+  border: none;
+  background: transparent;
+}
+
+/* To remove the number scroll */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* button section customization */
+#button-section {
+  margin: 5px;
+  display: block;
+}
+
+/* global button customization */
 button {
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
+  height: 65px;
+  width: 80px;
+  outline: 1px solid black;
+  cursor: default;
+  line-height: normal;
+  background: #e5e4e2;
+  text-align: center;
+  word-spacing: normal;
+  text-shadow: none;
 }
 
-input {
-  display: block;
-  margin-bottom: 20px;
+/* spanned button */
+.span-btn {
+  width: 165px;
 }
-button {
+
+/* all clear button */
+#all-clear {
+  background: #36454f;
+  color: whitesmoke;
+}
+
+#all-clear:hover {
+  background: #6082b6;
+  color: #36454f;
+  outline: 0.5 solid grey;
+  z-index: 3;
+}
+
+#equals {
+  background: tomato;
+  color: whitesmoke;
+  height: 130px;
+  bottom: 5px;
+}
+/* button {
   border: 1px solid gray;
   background: whitesmoke;
   margin-right: 5px;
-}
+} */
 
-button:hover {
+/* button:hover {
   background: tomato;
   color: white;
-}
+} */
 
-button:nth-last-child(2),
+/* button:nth-last-child(2),
 button:nth-last-child(1) {
   background: tomato;
   color: white;
+}
+
+button:nth-last-child(2):hover,
+button:nth-last-child(1):hover {
+  background: whitesmoke;
+  color: tomato;
+} */
+
+@font-face {
+  font-family: digital-7;
+  src: url(./assets/digital-7.ttf);
 }
