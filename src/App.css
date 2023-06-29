@@ -1,125 +1,90 @@
 * {
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 body {
-  width: 350px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
   background: #e6f1ff;
 }
 
-.App {
-  display: block;
-  position: relative;
-  margin-top: 20%;
+.calculator-app {
+  display: grid;
+  margin-top: 4rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: repeat(7, auto);
   border: 2px solid #7393b3;
-  background: black;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #c2dfff;
 }
 
-.App-header {
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  border-bottom: 2px solid #7393b3;
+.output-section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 #calc-section,
 #input-section {
   font-family: digital-7;
-  text-align: right;
 }
 
 #calc-section {
   min-height: 20px;
   font-size: 2rem;
   color: #6082b6;
-  line-height: 20px;
 }
 
 #input-section {
-  font-size: 29px;
-  color: whitesmoke;
-  line-height: 35px;
-  border: none;
-  background: transparent;
-}
-
-/* To remove the number scroll */
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* button section customization */
-#button-section {
-  margin: 5px;
-  display: block;
-}
-
-/* global button customization */
-button {
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  height: 65px;
-  width: 80px;
-  outline: 1px solid black;
-  cursor: default;
-  line-height: normal;
-  background: #e5e4e2;
-  text-align: center;
-  word-spacing: normal;
-  text-shadow: none;
+  font-size: 1.5rem;
+  color: #7393b3;
 }
 
 /* spanned button */
 .span-btn {
-  width: 165px;
+  grid-column: span 2;
+  padding: 0.7rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: #f0f8ff;
+  color: #36454f;
+  padding: 0.5rem;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #6082b6;
 }
 
 /* all clear button */
 #all-clear {
-  background: #36454f;
+  background: #7393b3;
   color: whitesmoke;
 }
 
 #all-clear:hover {
-  background: #6082b6;
+  background: #c9dfec;
   color: #36454f;
   outline: 0.5 solid grey;
   z-index: 3;
 }
 
-#equals {
-  background: tomato;
+#del:hover {
+  background-color: #c9dfec;
   color: whitesmoke;
-  height: 130px;
-  bottom: 5px;
 }
-/* button {
-  border: 1px solid gray;
-  background: whitesmoke;
-  margin-right: 5px;
-} */
-
-/* button:hover {
-  background: tomato;
-  color: white;
-} */
-
-/* button:nth-last-child(2),
-button:nth-last-child(1) {
-  background: tomato;
-  color: white;
-}
-
-button:nth-last-child(2):hover,
-button:nth-last-child(1):hover {
-  background: whitesmoke;
-  color: tomato;
-} */
 
 @font-face {
   font-family: digital-7;
