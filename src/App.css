@@ -18,6 +18,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #c2dfff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
 .output-section {
@@ -60,7 +61,7 @@ button {
   outline: none;
   background-color: #f0f8ff;
   color: #36454f;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 button:hover {
@@ -68,7 +69,6 @@ button:hover {
   color: #6082b6;
 }
 
-/* all clear button */
 #all-clear {
   background: #7393b3;
   color: whitesmoke;
