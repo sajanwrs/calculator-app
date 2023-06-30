@@ -1,81 +1,150 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 function App() {
-  const inputRef = useRef(null);
-  const resultRef = useRef(null);
-  //setting up the result state to 0
-  const [result, setResult] = useState(0);
+  //setting up the state
+  const [inputValue, setInputValue] = useState("");
 
-  function plus(e) {
-    e.preventDefault();
-    setResult((result) => result + Number(inputRef.current.value));
-  }
+  // function plus(e) {
+  //   e.preventDefault();
+  //   setResult((result) => result + Number(inputRef.current.value));
+  // }
 
-  function minus(e) {
-    e.preventDefault();
-    setResult((result) => result - Number(inputRef.current.value));
-  }
+  // function minus(e) {
+  //   e.preventDefault();
+  //   setResult((result) => result - Number(inputRef.current.value));
+  // }
 
-  function multiply(e) {
-    e.preventDefault();
-    setResult((result) => result * Number(inputRef.current.value));
-  }
+  // function multiply(e) {
+  //   e.preventDefault();
+  //   setResult((result) => result * Number(inputRef.current.value));
+  // }
 
-  function divide(e) {
-    e.preventDefault();
-    setResult((result) => result / Number(inputRef.current.value));
-  }
+  // function divide(e) {
+  //   e.preventDefault();
+  //   setResult((result) => result / Number(inputRef.current.value));
+  // }
 
-  function clearInput(e) {
-    e.preventDefault();
-    inputRef.current.value = 0;
-  }
-
-  function clearResult(e) {
-    e.preventDefault();
-    setResult(0);
-  }
+  // function clearResult(e) {
+  //   e.preventDefault();
+  //   setResult(0);
+  // }
 
   return (
     <div className="calculator-app">
       <div className="output-section">
-        {/* <p id="calc-section" ref={resultRef}>
-          {result}
-        </p> */}
-        <div id="calc-section">123445</div>
-        <div id="input-section">
-          3445
-          {/* <input
-            id="input-section"
-            pattern="[0-9]"
-            ref={inputRef}
-            type="number"
-            placeholder="Type a number"
-          /> */}
-        </div>
+        <div id="calc-section"></div>
+        <div id="input-section">{inputValue}</div>
       </div>
-      <button className="span-btn" id="all-clear" onClick={clearResult}>
+      <button
+        className="span-btn"
+        id="all-clear"
+        onClick={(event) => setInputValue("")}
+      >
         AC
       </button>
-      <button id="del">DEL</button>
-      <button onClick={divide}>÷</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button onClick={multiply}>x</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button onClick={minus}>-</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button onClick={plus}>+</button>
-      <button>0</button>
-      <button>.</button>
-      <button className="span-btn">=</button>
+      <button
+        id="del"
+        onClick={(event) => setInputValue(inputValue.slice(0, -1))}
+      >
+        DEL
+      </button>
+      <button
+        value={" / "}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        ÷
+      </button>
+      <button
+        value={7}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        7
+      </button>
+      <button
+        value={8}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        8
+      </button>
+      <button
+        value={9}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        9
+      </button>
+      <button
+        value={"*"}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        x
+      </button>
+      <button
+        value={4}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        4
+      </button>
+      <button
+        value={5}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        5
+      </button>
+      <button
+        value={6}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        6
+      </button>
+      <button
+        value={" - "}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        -
+      </button>
+      <button
+        value={1}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        1
+      </button>
+      <button
+        value={2}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        2
+      </button>
+      <button
+        value={3}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        3
+      </button>
+      <button
+        value={" + "}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        +
+      </button>
+      <button
+        value={0}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        0
+      </button>
+      <button
+        value={" . "}
+        onClick={(event) => setInputValue(inputValue + event.target.value)}
+      >
+        .
+      </button>
+      <button
+        className="span-btn"
+        onClick={(event) => setInputValue(eval(inputValue))}
+      >
+        =
+      </button>
     </div>
   );
 }

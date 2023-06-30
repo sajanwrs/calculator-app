@@ -11,7 +11,7 @@ body {
   display: grid;
   margin-top: 4rem;
   grid-template-columns: repeat(4, 6rem);
-  grid-template-rows: repeat(7, auto);
+  grid-template-rows: minmax(7, auto) repeat(5, 6rem); /* To expand at full heights as needed */
   border: 2px solid #7393b3;
   justify-content: center;
   width: fit-content;
@@ -22,13 +22,13 @@ body {
 }
 
 .output-section {
-  grid-column: 1 / -1;
+  grid-column: 1 / -1; /* To take up the full top rows */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
   padding: 0.75rem;
-  word-wrap: break-word;
+  word-wrap: break-word; /* To wrap multiple lines */
   word-break: break-all;
 }
 
